@@ -375,7 +375,7 @@ FROM (
          WHERE NOT is_area
            AND
                CASE WHEN zoom_level = 12 THEN
-                         CASE WHEN transportation_filter_z12(hl.highway, hl.construction) THEN TRUE
+                         CASE WHEN transportation_filter_z12(hl.highway, hl.construction, public_transport, service) THEN TRUE
                               WHEN hl.highway IN ('track', 'path', 'pedestrian') THEN TRUE
                          END
                     WHEN zoom_level = 13 THEN
