@@ -75,8 +75,7 @@ FROM (
            AND ele IS NOT NULL
            AND ele ~ E'^-?\\d{1,4}(\\D|$)'
      ) AS ranked_peaks
-WHERE zoom_level >= 7
-  AND (rank <= 5 OR zoom_level >= 14)
+WHERE (zoom_level >= 7 AND rank <= 5) OR zoom_level >= 12
 
 UNION ALL
 
@@ -110,7 +109,7 @@ FROM (
          FROM osm_mountain_linestring
          WHERE geometry && bbox
      ) AS ranked_mountain_linestring
-WHERE zoom_level >= 13
+WHERE zoom_level >= 12
 ORDER BY "rank" ASC;
 
 $$ LANGUAGE SQL STABLE
