@@ -30,7 +30,8 @@ tables:
       - peak
       - volcano
       - saddle
-
+      - spring
+      - rock
   # etldoc: imposm3 -> osm_mountain_linestring
   mountain_linestring:
     type: linestring
