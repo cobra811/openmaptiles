@@ -18,6 +18,7 @@ layer:
       - ridge
       - cliff
       - arete
+      - spring
     ele: Elevation (`ele`) in meters.
     ele_ft: Elevation (`ele`) in feet.
     customary_ft:
